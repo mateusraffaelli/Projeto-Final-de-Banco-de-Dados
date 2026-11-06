@@ -10,15 +10,43 @@ Construir e consultar um banco de dados relacional completo para o estoque de um
 
 ### 2.2. Diagrama MER
 ```mermaid
-classDiagram
-    Loja o--o Produto
+erDiagram
+    TipoProduto ||--o{ Produto : "contem"
+    Produto ||--o{ ItemVenda : "compoe"
+    Venda ||--o{ ItemVenda : "possui"
+    Venda }o--|| Pessoa : "feita-por"
+    
 
-    class Loja{
-        
+    %% Especialização
+    Pessoa ||--o| Funcionario : "é um"
+    Pessoa ||--o| Cliente : "é um"
+
+    Produto {
+        int id
     }
 
-    class Produto{
-        - int id
+    TipoProduto {
+        int id
+    }
+
+    Venda {
+        int id
+    }
+
+    ItemVenda {
+        int id
+    }
+    
+    Pessoa {
+        int id
+    }
+
+    Funcionario {
+        int id
+    }
+
+    Cliente {
+        int id
     }
 ```
 
