@@ -11,7 +11,7 @@ Construir e consultar um banco de dados relacional completo para o estoque de um
 ### 2.2. Diagrama MER
 ```mermaid
 classDiagram
-    Loja *-- Produto
+    Loja o--o Produto
 
     class Loja{
         
