@@ -86,3 +86,4 @@ erDiagram
 
 
 ## 4. Scripts SQL
+- [DDL](01_ddl.sql)
