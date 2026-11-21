@@ -1,4 +1,7 @@
-INSERT INTO "TipoProduto" ("idTipoProduto", "categoria") 
+INSERT INTO "TipoProduto" ("idTipoProduto")
+VALUES (1), (2), (3), (4), (5), (6), (7), (8), (9), (10), (11), (12), (13), (14), (15), (16), (17), (18), (19), (20);
+
+INSERT INTO "TipoProdutoCategoria" ("idTipoProduto", "categoria") 
 VALUES 
   (1, 'Frios'),
   (2, 'Laticínios'),
@@ -91,52 +94,33 @@ VALUES
   (40, 'Sabrina Cavalcanti');
 
 
-INSERT INTO "Funcionario" ("idPessoa", "nome", "cargo") 
+INSERT INTO "Funcionario" ("idPessoa", "cargo") 
 VALUES 
-  (1, 'Mariana Silva', 'Operadora de Caixa'),
-  (2, 'Lucas Oliveira', 'Operador de Caixa'),
-  (3, 'Fernanda Santos', 'Atendente de Balcão'),
-  (4, 'Gabriel Souza', 'Estoquista'),
-  (5, 'Juliana Costa', 'Supervisora de Loja'),
-  (6, 'Rafael Pereira', 'Assistente Administrativo'),
-  (7, 'Camila Rodrigues', 'Gerente de RH'),
-  (8, 'Bruno Almeida', 'Designer Gráfico'),
-  (9, 'Beatriz Nascimento', 'Analista de Qualidade'),
-  (10, 'Thiago Lima', 'Assistente de Marketing'),
-  (11, 'Larissa Araújo', 'Operadora de Caixa'),
-  (12, 'Rodrigo Fernandes', 'Açougueiro'),
-  (13, 'Amanda Carvalho', 'Gerente de Vendas'),
-  (14, 'Felipe Gomes', 'Subgerente'),
-  (15, 'Patrícia Martins', 'Analista de Mídia'),
-  (16, 'Diego Rocha', 'Diretor Comercial'),
-  (17, 'Vanessa Ribeiro', 'Fiscal de Caixa'),
-  (18, 'Gustavo Alves', 'Analista de Sistemas'),
-  (19, 'Renata Monteiro', 'Conferente de Estoque'),
-  (20, 'Eduardo Mendes', 'Gerente Geral');
+  (1, 'Caixa'),
+  (2, 'Caixa'),
+  (3, 'Vendedor'),
+  (4, 'Estoquista'),
+  (5, 'Gerente'),
+  (6, 'Vendedor'),
+  (7, 'Gerente'),
+  (8, 'Vendedor'),
+  (9, 'Estoquista'),
+  (10, 'Vendedor'),
+  (11, 'Caixa'),
+  (12, 'Estoquista'),
+  (13, 'Gerente'),
+  (14, 'Gerente'),
+  (15, 'Vendedor'),
+  (16, 'Estoquista'),
+  (17, 'Caixa'),
+  (18, 'Estoquista'),
+  (19, 'Estoquista'),
+  (20, 'Estoquista');
 
 
-INSERT INTO "Cliente" ("idPessoa", "nome") 
+INSERT INTO "Cliente" ("idPessoa") 
 VALUES 
-  (21, 'Carlos Eduardo'),
-  (22, 'Ana Paula'),
-  (23, 'João Pedro'),
-  (24, 'Letícia Barbosa'),
-  (25, 'Marcos Vinícius'),
-  (26, 'Bruna Cardoso'),
-  (27, 'André Luiz'),
-  (28, 'Tatiana Teixeira'),
-  (29, 'Fábio Correia'),
-  (30, 'Débora Dias'),
-  (31, 'Leandro Castro'),
-  (32, 'Priscila Campos'),
-  (33, 'Marcelo Freitas'),
-  (34, 'Natália Vieira'),
-  (35, 'Vinícius Duarte'),
-  (36, 'Aline Moreira'),
-  (37, 'Guilherme Pinto'),
-  (38, 'Carla Nogueira'),
-  (39, 'Henrique Farias'),
-  (40, 'Sabrina Cavalcanti');
+  (21), (22), (23), (24), (25), (26), (27), (28), (29), (30), (31), (32), (33), (34), (35), (36), (37), (38), (39), (40);
 
 
 INSERT INTO "Produto" ("idProduto", "precoItem", "idTipoProduto") 
@@ -210,12 +194,12 @@ VALUES
   (19, 19, 19, 19, 48.00),
   (20, 20, 20, 20, 39.90);
 
+INSERT INTO "VendaPagamento" ("idVenda", "idFormaPagamento")
+VALUES
+  (1, 3), (2, 4), (3, 5), (4, 1), (5, 3), (6, 5), (7, 4), (8, 3), (9, 6), (10, 5), (11, 1), (12, 7), (13, 3), (14, 4), (15, 5), (16, 8), (17, 3), (18, 5), (19, 9), (20, 10);
+
 
 UPDATE "Pessoa"
-SET nome = 'Maria Santos'
-WHERE idPessoa = 40;
-
-UPDATE "Cliente"
 SET nome = 'Maria Santos'
 WHERE idPessoa = 40;
 
