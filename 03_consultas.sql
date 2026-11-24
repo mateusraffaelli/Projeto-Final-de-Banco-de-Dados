@@ -5,6 +5,17 @@ SELECT Nome FROM Pessoa WHERE idPessoa BETWEEN 5 AND 10;
 SELECT Pessoa.nome FROM Pessoa JOIN Funcionario ON Pessoa.idPessoa = Funcionario.idPessoa WHERE Funcionario.Cargo = 'Gerente';
 
 -- Funções de agregação, GROUP BY e HAVING
+-- 1) Contar Tipos de produtos:
+SELECT COUNT(*) FROM TipoProduto;
+-- 2) Somar as vendas:
+SELECT SUM(valorTotal) FROM Venda;
+-- 3) Contar o numero de funcionarios em cada cargo:
+SELECT cargo, COUNT(*) FROM Funcionario
+GROUP BY cargo;
+-- 4) Conta os grupos de funcionarios que possuem mais de 4 pessoas
+SELECT cargo, COUNT(*) FROM Funcionario
+GROUP BY cargo
+HAVING COUNT(*) > 4;
 
 -- INNER JOIN , LEFT JOIN e junção de 3 ou mais tabelas
 
