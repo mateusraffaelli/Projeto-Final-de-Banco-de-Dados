@@ -18,6 +18,56 @@ GROUP BY cargo
 HAVING COUNT(*) > 4;
 
 -- INNER JOIN , LEFT JOIN e junção de 3 ou mais tabelas
+-- 1) Relaciona o cliente com a venda
+SELECT
+	Pessoa.nome,
+	Venda.idVenda
+From Pessoa INNER JOIN Venda
+	ON Pessoa.idPessoa = Venda.idCliente;
+	
+-- 2) Relaciona funcionarios com as vendas mesmo sem correspondencia
+SELECT
+	Pessoa.nome,
+	Venda.idVenda
+From Pessoa LEFT JOIN Venda
+	ON Pessoa.idPessoa = Venda.idFuncionario;
+	
+-- 3) Relaciona id do produto, data da venda e nome do cliente
+SELECT
+	Produto.idProduto,
+	Venda.dataVenda,
+	Pessoa.nome
+FROM Produto RIGHT JOIN Venda
+	ON Produto.idProduto = Venda.idVenda
+RIGHT JOIN Pessoa
+	ON Pessoa.idPessoa = Venda.idCliente;
+	
+-- 4) Valor da venda, forma de pagamento e nome do funcionario
+SELECT
+	Venda.valorTotal,
+	FormaPagamento.metodo,
+	Pessoa.nome
+FROM Venda INNER JOIN VendaPagamento
+	ON Venda.idVenda = VendaPagamento.idFormaPagamento
+INNER JOIN FormaPagamento
+	ON FormaPagamento.idFormaPagamento = VendaPagamento.idFormaPagamento
+INNER JOIN Pessoa
+	ON Pessoa.idPessoa = Venda.idFuncionario;
+	
+--5) categoria do produto, data da venda e cliente
+SELECT
+    TipoProdutoCategoria.categoria,
+    Venda.dataVenda,
+    Pessoa.nome
+FROM TipoProdutoCategoria
+LEFT JOIN Produto
+    ON TipoProdutoCategoria.idTipoProduto = Produto.idTipoProduto
+LEFT JOIN ItemVenda
+    ON Produto.idProduto = ItemVenda.idProduto
+LEFT JOIN Venda
+    ON Venda.idVenda = ItemVenda.idVenda
+LEFT JOIN Pessoa
+    ON Pessoa.idPessoa = Venda.idCliente;
 
 -- Subconsultas ( IN , EXISTS , escalar) 
 
